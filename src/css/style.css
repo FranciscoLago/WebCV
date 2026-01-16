@@ -1,0 +1,319 @@
+:root {
+    --primary: #073143;
+    --accent: #ec813c;
+    --background: #f8fafc;
+    --text: #1f2933;
+    --muted: #6b7280;
+}
+
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Segoe UI", system-ui, sans-serif;
+    background: linear-gradient(to bottom, #ffffff, #054d4d);
+    color: var(--text);
+    line-height: 1.7;
+}
+
+/* CONTAINER */
+.container {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 1.8rem 1.5rem;
+    background: linear-gradient(180deg, #f2fbfb, #eaf7f7);
+    border-radius: 10px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.07);
+}
+
+/* SECCIONES */
+section {
+    margin-bottom: 2rem;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease;
+}
+
+section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.section h3 {
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+    position: relative;
+}
+
+.section h3 i {
+    margin-right: 8px;
+    color: var(--accent);
+}
+
+.section h3::after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 3px;
+    background-color: var(--accent);
+    margin-top: 6px;
+    transition: width 0.4s ease;
+}
+
+.section.visible h3::after {
+    width: 90px;
+}
+
+/* LISTAS */
+.list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.list li {
+    position: relative;
+    padding-left: 18px;
+    margin-bottom: 0.6rem;
+    transition: transform 0.3s ease;
+}
+
+.list li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+}
+
+.list li:hover {
+    transform: translateX(6px);
+}
+
+/* HERO */
+.hero {
+    padding: 2rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: linear-gradient(180deg, #054d4d 0%, #0a6b6b 55%, var(--primary) 100%);
+    color: white;
+}
+
+.hero h1 {
+    font-size: 2.2rem;
+    margin-bottom: 0.3rem;
+}
+
+.hero h1::after {
+    content: "";
+    display: block;
+    width: 120px;
+    height: 4px;
+    background-color: var(--accent);
+    margin: 0.6rem auto;
+    border-radius: 2px;
+}
+
+.hero h2 {
+    font-weight: 300;
+    opacity: 0.92;
+}
+
+.hero-text {
+    max-width: 700px;
+    margin: 1rem auto 0;
+    font-size: 1rem;
+    opacity: 0.95;
+}
+
+/* BOTÓN HERO */
+.btn {
+    display: inline-block;
+    background: var(--accent);
+    color: white;
+    padding: 0.5rem 1.2rem;
+    border-radius: 25px;
+    margin-top: 1rem;
+    text-decoration: none;
+    font-weight: 600;
+    transition: transform 0.3s, background 0.3s;
+}
+
+.btn:hover {
+    background: #ff944d;
+    transform: translateY(-2px);
+}
+
+/* FOTO PERFIL */
+.profile-pic {
+    width: 140px;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid var(--accent);
+    margin-bottom: 1.2rem;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+    transition: transform 0.4s ease;
+}
+
+.profile-pic:hover {
+    transform: scale(1.05) rotate(1deg);
+}
+
+/* PROYECTOS */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.project-card {
+    background: white;
+    border-radius: 14px;
+    padding: 1.6rem;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.07);
+    transition: all 0.4s ease;
+    border-left: 4px solid var(--accent);
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.project-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+    transition: all 0.6s ease;
+}
+
+.project-card h4 {
+    margin-bottom: 0.6rem;
+    color: var(--primary);
+}
+
+.project-card p {
+    font-size: 0.95rem;
+    margin-bottom: 0.8rem;
+    text-align: justify;
+}
+
+.project-card .tech {
+    font-size: 0.8rem;
+    color: var(--accent);
+    font-weight: 600;
+}
+
+.project-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 18px 40px rgba(0,0,0,0.12);
+}
+
+/* TECNOLOGÍAS */
+.tech-group {
+    margin-bottom: 1.5rem;
+}
+
+.tech-group h4 {
+    font-size: 1rem;
+    margin-bottom: 0.6rem;
+    color: var(--primary);
+    position: relative;
+    padding-left: 14px;
+}
+
+.tech-group h4::before {
+    content: "";
+    width: 6px;
+    height: 6px;
+    background-color: var(--accent);
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 2px;
+}
+
+.tech-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+}
+
+.tech-tag {
+    padding: 0.35rem 0.7rem;
+    font-size: 0.85rem;
+    border-radius: 20px;
+    background-color: rgba(249,115,22,0.1);
+    color: var(--accent);
+    border: 1px solid rgba(249,115,22,0.3);
+    transition: all 0.3s ease;
+    cursor: default;
+}
+
+.tech-tag:hover {
+    background-color: var(--accent);
+    color: white;
+    transform: scale(1.1);
+}
+
+/* CONTACTO */
+.contact a {
+    color: var(--primary);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.contact a:hover {
+    color: var(--accent);
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 2rem;
+    color: var(--muted);
+    font-size: 0.85rem;
+}
+
+footer a {
+    color: white;
+    margin: 0 0.3rem;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+footer a:hover {
+    color: var(--accent);
+}
+
+/* SEPARADORES SUAVES */
+.section:not(:last-child)::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--accent), transparent);
+    margin-top: 2.5rem;
+    opacity: 0.3;
+}
+
+/* =========================
+   RESPONSIVE
+   ========================= */
+@media (max-width: 768px) {
+    .hero h1 { font-size: 1.9rem; }
+    .hero h2 { font-size: 1rem; }
+    .hero-text { font-size: 0.95rem; }
+    .project-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 480px) {
+    .hero h1 { font-size: 1.6rem; }
+    .hero h2 { font-size: 0.9rem; }
+    .hero-text { font-size: 0.9rem; }
+    .profile-pic { width: 120px; height: 120px; }
+}
